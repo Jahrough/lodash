@@ -6,11 +6,10 @@
  * @param {Function} iteratee The function invoked per iteration.
  * @returns {Array} Returns `array`.
  */
-function arrayEach(array, iteratee) {
-  let index = -1
+function arrayEach(array: any[], iteratee: Function) {
   const length = array.length
 
-  while (++index < length) {
+  for (let index = 0; index < length; index++) {
     if (iteratee(array[index], index, array) === false) {
       break
     }
